@@ -1,0 +1,33 @@
+{
+  "name": "website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Personal website for Gustav Kofoed Clausen hosted on https://gustavclausen.com.",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavclausen/website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavclausen/website/issues"
+  },
+  "homepage": "https://github.com/gustavclausen/website#readme",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0"
+  },
+  "staticFiles": {
+    "staticPath": [
+      "static"
+    ]
+  }
+}
