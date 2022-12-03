@@ -38,6 +38,15 @@ export const commands = [
     clear: false,
   },
   {
+    command: "cat portfolio.txt",
+    output: {
+      delay: 50, // ms
+      fun: async () => {
+        return await fetchTextFile("/files/portfolio.txt");
+      },
+    },
+  },
+  {
     command: "cat contact-info.txt",
     output: {
       delay: 100, // ms
