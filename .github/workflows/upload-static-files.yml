@@ -3,38 +3,38 @@ name: Upload Website
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-        cache: 'npm'
-    - run: npm install --include=dev
-    - run: npm run build
-    - uses: actions/upload-artifact@master
-      with:
-        name: dist
-        path: dist
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "npm"
+      - run: npm install --include=dev
+      - run: npm run build
+      - uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - run: mkdir dist
-    - uses: actions/download-artifact@master
-      with:
-        name: dist
-        path: dist
-    - uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --follow-symlinks --delete
-      env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        SOURCE_DIR: 'dist'
-        AWS_REGION: 'eu-west-1'
+      - run: mkdir dist
+      - uses: actions/download-artifact@master
+        with:
+          name: dist
+          path: dist
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          SOURCE_DIR: "dist"
+          AWS_REGION: "eu-west-1"
