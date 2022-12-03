@@ -1,4 +1,4 @@
 Hi, visitor – welcome to my personal website!
-My name is Gustav (but you can call me Gus if you like). I'm a DevOps engineer
-and cloud enthusiast based in Copenhagen, Denmark. I specialize in DevOps
-processes and tools, and cloud technologies.
+My name is Gustav (but you can call me Gus if you like). I'm a Software
+Engineer based in Copenhagen, Denmark and currently specializing in Platform
+and Site Reliability Engineering.
