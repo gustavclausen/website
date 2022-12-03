@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/gustavclausen/website#readme",
   "dependencies": {
-    "jquery": "^3.6.0",
-    "regenerator-runtime": "^0.13.7"
+    "jquery": "^3.6.1",
+    "regenerator-runtime": "^0.13.11"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
