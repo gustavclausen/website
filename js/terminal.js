@@ -65,6 +65,7 @@ export async function executeCommand(linesEl, commandObj) {
     ? await commandObj.output.fun()
     : null;
   const clearLines = commandObj.clear;
+  const exit = commandObj.exit;
 
   const typeCommandCharacters = function (chars) {
     return chars.reduce((prom, _, i) => {
@@ -88,5 +89,7 @@ export async function executeCommand(linesEl, commandObj) {
       .then(() => $(linesEl).empty());
   }
 
-  newLine(linesEl);
+  if (!exit) {
+    newLine(linesEl);
+  }
 }

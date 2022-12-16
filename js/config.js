@@ -52,4 +52,15 @@ export const commands = [
       fun: async () => await fetchTextFile("/files/contact-info.txt"),
     },
   },
+  {
+    command: "exit",
+    output: {
+      delay: 200, // ms
+      fun: () => `Bye bye 👋
+      
+      exit 0
+      `,
+    },
+    exit: true,
+  },
 ];
