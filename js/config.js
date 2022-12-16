@@ -32,6 +32,13 @@ export const commands = [
     },
   },
   {
+    command: "cat blog.txt",
+    output: {
+      delay: 200, // ms
+      fun: async () => await fetchTextFile("/files/blog.txt"),
+    },
+  },
+  {
     command: "cat portfolio.txt",
     output: {
       delay: 200, // ms
