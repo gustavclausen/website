@@ -9,17 +9,14 @@ export const commands = [
   {
     command: "aws s3 sync s3://gustavclausen.com .",
     output: {
-      delay: 500, // ms
-      fun: async () => {
-        return await fetchTextFile("/files/s3-sync-output.txt");
-      },
+      delay: 50, // ms
+      fun: async () => await fetchTextFile("/files/s3-sync-output.txt"),
     },
-    clear: false,
   },
   {
     command: "clear",
     output: {
-      delay: 50, // ms
+      delay: 500, // ms
       fun: null,
     },
     clear: true,
@@ -27,33 +24,25 @@ export const commands = [
   {
     command: 'echo "👋" && cat welcome-message.txt',
     output: {
-      delay: 50, // ms
-      fun: async () => {
-        return `👋
-                
-                ${await fetchTextFile("/files/welcome-message.txt")}
-                `;
-      },
+      delay: 200, // ms
+      fun: async () => `👋
+      
+      ${await fetchTextFile("/files/welcome-message.txt")}
+      `,
     },
-    clear: false,
   },
   {
     command: "cat portfolio.txt",
     output: {
-      delay: 50, // ms
-      fun: async () => {
-        return await fetchTextFile("/files/portfolio.txt");
-      },
+      delay: 200, // ms
+      fun: async () => await fetchTextFile("/files/portfolio.txt"),
     },
   },
   {
     command: "cat contact-info.txt",
     output: {
-      delay: 100, // ms
-      fun: async () => {
-        return await fetchTextFile("/files/contact-info.txt");
-      },
+      delay: 200, // ms
+      fun: async () => await fetchTextFile("/files/contact-info.txt"),
     },
-    clear: false,
   },
 ];
